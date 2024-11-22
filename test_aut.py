@@ -13,8 +13,7 @@ def test_aut(browser):
     browser.find_element(By.ID, 'login-button').click()
 
     try:
-        browser.find_element(By.CLASS_NAME, 'bm-burger-button').click()
-        logout_button = browser.find_element(By.LINK_TEXT, "Logout")
-        assert logout_button.is_displayed()
+        content_check = browser.find_element(By.CLASS_NAME, 'inventory_container')
+        assert content_check.is_displayed()
     except NoSuchElementException:
-        assert False, "Logout button does not exist."
+        assert False
